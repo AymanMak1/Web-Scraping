@@ -28,20 +28,4 @@ library(xml2)
   animetitle
   
   anime_infos = data.frame(animetitle,infos)
-
-  
-  # Tables
-  
-  col_link = "https://www.numbeo.com/cost-of-living/compare_countries_result.jsp?country1=Morocco&country2=Germany"
-  col_page = read_html(col_link)
-  
-  col_table = col_page %>% html_nodes("table") %>% html_table() %>% .[[1]]
-  
-  
-  wiki_link = "https://en.wikipedia.org/wiki/List_of_apple_cultivars"
-  wiki_page = read_html(wiki_link)
-  
-  apple_table = wiki_page %>% html_nodes("table") %>% .[2] %>% 
-    html_table(fill = TRUE) %>% .[[1]]
-  
   
